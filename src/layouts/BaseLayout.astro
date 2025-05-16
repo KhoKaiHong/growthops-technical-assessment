@@ -1,3 +1,7 @@
+---
+const { title = 'GrowthOps Asia', description = 'GrowthOps Asia' } = Astro.props
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,8 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
+
+    <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <title>GrowthOps Asia</title>
+    <title>{title}</title>
   </head>
   <body>
     <slot />

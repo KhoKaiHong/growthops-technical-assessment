@@ -16,7 +16,7 @@ export function Heading() {
 
   return (
     <motion.h1
-      className="font-extrabold text-8xl leading-[100%] tracking-[-1%] text-center"
+      className="font-extrabold text-4xl sm:text-8xl leading-[100%] tracking-[-1%] text-center"
       animate={colorVariants}
       transition={{
         duration: 6,

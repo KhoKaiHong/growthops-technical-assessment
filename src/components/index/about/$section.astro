@@ -1,0 +1,41 @@
+---
+import { Heading } from '@/components/index/about/Heading.tsx'
+import TextboxLogo from '@/assets/textbox-logo.svg'
+import AboutBackground1 from '@/assets/about-bg1.svg'
+import AboutBackground2 from '@/assets/about-bg2.svg'
+---
+
+<section
+  class="relative min-h-dvh overflow-x-hidden flex items-center"
+>
+  <div class="flex flex-col items-center justify-center w-full gap-20">
+    <p
+      class="font-medium text-xl sm:text-3xl leading-[100%] sm:leading-11 tracking-[-1%] text-center w-xs sm:w-xl"
+    >
+      With a focus in fusing <span
+        class="bg-gradient-to-r from-[#47F4FF] to-[#4CF1E7] bg-clip-text text-transparent"
+        >strategy</span
+      >, <span class="relative text-primary inline-block">
+        <TextboxLogo class="inline-block h-10 sm:h-16 w-auto" />
+        <span
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          >design</span
+        >
+      </span> and <span class="text-[#33F3FF]"
+        ><code>&lt;technology/&gt;</code></span
+      > to build and sustain market leaders
+    </p>
+    <p
+      class="font-medium text-xl sm:text-3xl leading-[100%] sm:leading-11 tracking-[-1%] text-center"
+    >
+      this is
+    </p>
+    <Heading client:visible />
+  </div>
+  <AboutBackground1
+    class="absolute inset-y-0 left-0 h-full backdrop-blur-[154px] -z-20 w-auto"
+  />
+  <AboutBackground2
+    class="absolute inset-y-0 right-0 h-full backdrop-blur-[154px] -z-20 hidden sm:block w-auto"
+  />
+</section>

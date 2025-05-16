@@ -1,13 +1,23 @@
 ---
 import '@/styles/global.css'
-import Welcome from '@/components/index/Welcome.astro'
-import Layout from '@/layouts/Layout.astro'
+import IndexLayout from '@/layouts/IndexLayout.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
 import { Header } from '@/components/Header.tsx'
 import { Preloader } from '@/components/Preloader.tsx'
+import Masthead from '@/components/index/masthead/$section.astro'
+import About from '@/components/index/about/$section.astro'
+import WhatWeDo from '@/components/index/what-we-do/$section.astro'
 ---
 
-<Layout>
-  <!-- <Preloader client:only="react" /> -->
+<BaseLayout
+  title="GrowthOps Asia"
+  description="This is the landing page of GrowthOps Asia"
+>
+  <!-- <Preloader client:load /> -->
   <Header client:load />
-  <Welcome />
-</Layout>
+  <IndexLayout>
+    <Masthead slot="masthead" />
+    <About slot="about" />
+    <WhatWeDo slot="what-we-do" />
+  </IndexLayout>
+</BaseLayout>
