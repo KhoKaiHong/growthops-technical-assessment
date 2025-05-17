@@ -1,0 +1,131 @@
+---
+import Heading from '@/components/index/unforgettable-results/Heading.astro'
+
+const contents = [
+  {
+    stat: '400%',
+    title: 'Increase in organic page views',
+    description: `<p class="text-sm text-foreground-muted">
+                    Using our SEO services, it also resulted in a 
+                    <span class="font-bold">109% increase in page visibility</span>
+                  </p>`,
+  },
+  {
+    stat: '4.5%',
+    title: 'Increase in sales',
+    description: `<p class="text-sm text-foreground-muted">
+                    Through our creative services, a national automaker experienced a 
+                    <span class="font-bold">4.5% increase in sales amidst a -4.6% market decline</span>. They also had a 
+                    <span class="font-bold">2% increase in market share</span>, and a
+                    <span class="font-bold">5.6 point shift in brand perception</span>
+                  </p>`,
+  },
+  {
+    stat: '96%',
+    title: 'Faster page launches',
+    description: `<div class="flex flex-col gap-4">
+                    <p class="text-sm text-foreground-muted">
+                      Using AEM, a leading Telco saw these results
+                    </p>
+                    <div class="w-60 sm:w-72 h-10 relative">
+                      <div class="w-full h-full bg-secondary opacity-20 rounded-sm"></div>
+                      <div class="absolute inset-y-0 left-0 w-2/7 bg-secondary rounded-sm"></div>
+                    </div>
+                    <p class="text-sm text-foreground-muted">
+                      Campaign launches cut from <span class="font-bold">7 days to 2 days</span>
+                    </p>
+                    <div class="w-60 sm:w-72 h-10 relative">
+                      <div class="w-full h-full bg-secondary opacity-20 rounded-sm"></div>
+                      <div class="absolute inset-y-0 left-0 w-1/12 bg-secondary rounded-sm"></div>
+                    </div>
+                    <p class="text-sm text-foreground-muted">
+                      Page launches cut from <span class="font-bold">2 days to 2 hours</span>
+                    </p>
+                  </div>`,
+  },
+  {
+    stat: '71%',
+    title: 'Reduction in CPL',
+    description: `<p class="text-sm text-foreground-muted">
+                    After optimising the performance media funnel, a leading bank saw
+                    <span class="font-bold">savings over AUD$300 in the first year</span>
+                  </p>`,
+  },
+  {
+    stat: '38%',
+    title: 'Conversion rate improvement',
+    description: `<p class="text-sm text-foreground-muted">
+                    Using Adobe Target to A/B test landing pages' forms, we saw an
+                    <span class="font-bold">increase in conversion rate</span>
+                  </p>`,
+  },
+]
+---
+
+<section
+  class="py-36 flex flex-col items-center justify-center mx-auto w-full sm:max-w-5xl px-5 overflow-x-clip gap-10 sm:gap-24"
+>
+  <Heading />
+  <div class="flex flex-col gap-14 sm:hidden">
+    {
+      contents.map((content, index) => (
+        <div
+          class={`flex flex-col w-full max-w-3/4 gap-2 ${index % 2 === 0 ? 'self-start' : 'self-end'}`}
+        >
+          <h3 class="text-secondary">
+            <div class="flex flex-col gap-2">
+              <span class="font-bold text-4xl">{content.stat}</span>
+              <span class="font-semibold text-sm uppercase">
+                {content.title}
+              </span>
+            </div>
+          </h3>
+          <Fragment set:html={content.description} />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="hidden w-full sm:grid sm:grid-cols-2 gap-40">
+    <div class="flex flex-col gap-40">
+      {
+        contents
+          .filter((_, index) => index % 2 === 0)
+          .map((content) => (
+            <div class="flex flex-col gap-4">
+              <h3 class="text-secondary">
+                <>
+                  <span class="font-bold text-6xl">{content.stat}</span>
+                  <br />
+                </>
+                <span class="font-semibold text-sm uppercase">
+                  {content.title}
+                </span>
+              </h3>
+              <Fragment set:html={content.description} />
+            </div>
+          ))
+      }
+    </div>
+    <div class="flex flex-col gap-40 mt-40">
+      {
+        contents
+          .filter((_, index) => index % 2 === 1)
+          .map((content) => (
+            <div class="flex flex-col gap-4">
+              <h3 class="text-secondary">
+                <>
+                  <span class="font-bold text-6xl">{content.stat}</span>
+                  <br />
+                </>
+                <span class="font-semibold text-sm uppercase">
+                  {content.title}
+                </span>
+              </h3>
+              <Fragment set:html={content.description} />
+            </div>
+          ))
+      }
+    </div>
+  </div>
+</section>

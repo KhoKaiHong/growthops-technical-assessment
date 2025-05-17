@@ -1,7 +1,10 @@
 <main>
   <div class="mx-auto relative">
     <slot name="masthead" />
-    <slot name="about" />
-    <slot name="what-we-do" />
+    <div class="flex flex-col-reverse sm:flex-col">
+      <slot name="about" />
+      <slot name="what-we-do" />
+    </div>
+    <slot name="unforgettable-results" />
   </div>
 </main>
