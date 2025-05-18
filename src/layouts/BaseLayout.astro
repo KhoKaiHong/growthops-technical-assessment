@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions'
+
 const { title = 'GrowthOps Asia', description = 'GrowthOps Asia' } = Astro.props
 ---
 
@@ -16,6 +18,7 @@ const { title = 'GrowthOps Asia', description = 'GrowthOps Asia' } = Astro.props
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
     <slot />

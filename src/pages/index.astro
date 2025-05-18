@@ -1,13 +1,14 @@
 ---
 import '@/styles/global.css'
-import IndexLayout from '@/layouts/IndexLayout.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
+import IndexLayout from '@/layouts/IndexLayout.astro'
 import { Header } from '@/components/Header.tsx'
 import { Preloader } from '@/components/Preloader.tsx'
 import Masthead from '@/components/index/masthead/$section.astro'
 import About from '@/components/index/about/$section.astro'
 import WhatWeDo from '@/components/index/what-we-do/$section.astro'
 import UnforgettableResults from '@/components/index/unforgettable-results/$section.astro'
+import Testimonials from '@/components/index/testimonials/$section.astro'
 ---
 
 <BaseLayout
@@ -21,5 +22,6 @@ import UnforgettableResults from '@/components/index/unforgettable-results/$sect
     <About slot="about" />
     <WhatWeDo slot="what-we-do" />
     <UnforgettableResults slot="unforgettable-results" />
+    <Testimonials slot="testimonials" />
   </IndexLayout>
 </BaseLayout>
