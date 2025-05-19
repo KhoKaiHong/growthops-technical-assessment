@@ -1,5 +1,5 @@
 import { Tab, TabList, TabPanel, Tabs } from 'react-aria-components'
-import type { TabPanelProps, TabProps } from 'react-aria-components'
+import type { TabProps } from 'react-aria-components'
 
 const testimonials = [
   {
@@ -44,9 +44,9 @@ export function TestimonialTabs() {
         className="flex rounded-full p-1 border border-[#2B2B2B] max-w-sm"
       >
         {testimonials.map((testimonial) => (
-          <MyTab key={testimonial.title} id={testimonial.title}>
+          <TitleTab key={testimonial.title} id={testimonial.title}>
             {testimonial.title}
-          </MyTab>
+          </TitleTab>
         ))}
       </TabList>
       {testimonials.map((testimonial) => (
@@ -75,7 +75,7 @@ export function TestimonialTabs() {
   )
 }
 
-function MyTab(props: TabProps) {
+function TitleTab(props: TabProps) {
   return (
     <Tab
       {...props}

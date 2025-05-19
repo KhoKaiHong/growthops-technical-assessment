@@ -1,0 +1,61 @@
+---
+import MalaysiaAirlinesLogo from '@/assets/malaysia-airlines-logo.svg'
+import MaxisLogo from '@/assets/maxis-logo.svg'
+import GrabLogo from '@/assets/grab-logo.svg'
+import DbsLogo from '@/assets/dbs-logo.svg'
+import TreasureLogo from '@/assets/treasure-logo.svg'
+import MicrosoftLogo from '@/assets/microsoft-logo.svg'
+import LogitechLogo from '@/assets/logitech-logo.svg'
+import DreamscapeDigitalLogo from '@/assets/dreamscape-digital-logo.svg'
+import StandardCharteredLogo from '@/assets/standard-chartered-logo.svg'
+import SitebeatLogo from '@/assets/sitebeat-logo.svg'
+import MizuhoLogo from '@/assets/mizuho-logo.svg'
+
+const items = [
+  { src: MalaysiaAirlinesLogo.src, alt: 'Malaysia Airlines Logo' },
+  { src: MaxisLogo.src, alt: 'Maxis Logo' },
+  { src: GrabLogo.src, alt: 'Grab Logo' },
+  { src: DbsLogo.src, alt: 'DBS Logo' },
+  { src: TreasureLogo.src, alt: 'Treasure Logo' },
+  { src: MicrosoftLogo.src, alt: 'Microsoft Logo' },
+  { src: LogitechLogo.src, alt: 'Logitech Logo' },
+  { src: DreamscapeDigitalLogo.src, alt: 'Dreamscape Digital Logo' },
+  { src: StandardCharteredLogo.src, alt: 'Standard Chartered Logo' },
+  { src: SitebeatLogo.src, alt: 'Sitebeat Logo' },
+  { src: MizuhoLogo.src, alt: 'Mizuho Logo' },
+]
+---
+
+<div class="overflow-clip w-dvw flex mask-x-from-80% mask-x-to-100%">
+  {
+    items.map((item, index, arr) => (
+      <img
+        class="row2-logo"
+        style={`--index: ${index}; --count: ${arr.length};`}
+        src={item.src}
+        alt={item.alt}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .row2-logo {
+    --duration: 17s;
+    --delay: calc(
+      (var(--duration) / var(--count)) *
+        (var(--index, 0) - (var(--count) * 0.5))
+    );
+    animation: slide var(--duration) calc(var(--delay) - (var(--count) * 0.5s))
+      infinite linear reverse;
+    translate: var(--origin-x) 0;
+    --origin-x: calc(((var(--count) - var(--index)) + 1) * 100%);
+    --destination-x: calc((var(--index) + 1) * -100%);
+  }
+
+  @keyframes slide {
+    100% {
+      translate: var(--destination-x) 0;
+    }
+  }
+</style>

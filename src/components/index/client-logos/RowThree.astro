@@ -1,0 +1,60 @@
+---
+import CimbLogo from '@/assets/cimb-logo.svg'
+import RhbLogo from '@/assets/rhb-logo.svg'
+import NikkoAmLogo from '@/assets/nikko-am-logo.svg'
+import MannHummelLogo from '@/assets/mann-hummel-logo.svg'
+import ChubbLogo from '@/assets/chubb-logo.svg'
+import NtucLogo from '@/assets/ntuc-logo.svg'
+import TaylorsUniversityLogo from '@/assets/taylors-university-logo.svg'
+import EsplanadeLogo from '@/assets/esplanade-logo.svg'
+import ProtonLogo from '@/assets/proton-logo.svg'
+import TriumphLogo from '@/assets/triumph-logo.svg'
+
+const items = [
+  { src: CimbLogo.src, alt: 'CIMB Logo' },
+  { src: RhbLogo.src, alt: 'RHB Logo' },
+  { src: NikkoAmLogo.src, alt: 'Nikko AM Logo' },
+  { src: MannHummelLogo.src, alt: 'Mann Hummel Logo' },
+  { src: ChubbLogo.src, alt: 'Chubb Logo' },
+  { src: NtucLogo.src, alt: 'NTUC Logo' },
+  { src: TaylorsUniversityLogo.src, alt: "Taylor's University Logo" },
+  { src: EsplanadeLogo.src, alt: 'Esplanade Logo' },
+  { src: ProtonLogo.src, alt: 'Proton Logo' },
+  { src: TriumphLogo.src, alt: 'Triumph Logo' },
+  { src: ProtonLogo.src, alt: 'Proton Logo' },
+]
+---
+
+<div class="overflow-clip w-dvw flex mask-x-from-80% mask-x-to-100%">
+  {
+    items.map((item, index, arr) => (
+      <img
+        class="row2-logo"
+        style={`--index: ${index}; --count: ${arr.length};`}
+        src={item.src}
+        alt={item.alt}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .row2-logo {
+    --duration: 17s;
+    --delay: calc(
+      (var(--duration) / var(--count)) *
+        (var(--index, 0) - (var(--count) * 0.5))
+    );
+    animation: slide var(--duration) calc(var(--delay) - (var(--count) * 0.5s))
+      infinite linear;
+    translate: var(--origin-x) 0;
+    --origin-x: calc(((var(--count) - var(--index)) + 1) * 100%);
+    --destination-x: calc((var(--index) + 1) * -100%);
+  }
+
+  @keyframes slide {
+    100% {
+      translate: var(--destination-x) 0;
+    }
+  }
+</style>
