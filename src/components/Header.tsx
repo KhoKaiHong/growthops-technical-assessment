@@ -40,7 +40,7 @@ export function Header() {
             onClick={() => setMenuOpen(true)}
             className="flex items-center cursor-pointer gap-2"
           >
-            <span className="hidden sm:block font-bold leading-[100%] text-sm uppercase">
+            <span className="hidden sm:block font-bold text-sm uppercase">
               Menu
             </span>
             <img src={menuLogo.src} alt="Menu" className="w-10 h-10" />
@@ -65,12 +65,12 @@ export function Header() {
               onClick={() => setMenuOpen(false)}
               className="flex items-center cursor-pointer gap-2"
             >
-              <span className="hidden sm:block font-bold text-sm leading-[100%] text-right uppercase">
+              <span className="hidden sm:block font-bold text-sm text-right uppercase">
                 Close
               </span>
               <img src={menuCloseLogo.src} alt="Menu" className="w-10 h-10" />
             </button>
-            <nav className="flex flex-col justify-center h-full gap-10 font-black text-5xl sm:text-6xl leading-[100%] tracking-[0.01em] text-right uppercase">
+            <nav className="flex flex-col justify-center h-full gap-10 font-black text-5xl sm:text-6xl text-right uppercase">
               {menuItems.map((item) => (
                 <a href={item.href} key={item.name}>
                   {item.name}

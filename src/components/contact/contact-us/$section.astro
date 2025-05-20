@@ -1,7 +1,31 @@
 ---
 import { ContactForm } from '@/components/contact/contact-us/Form'
+import ContactBg1 from '@/assets/contact-bg1.svg'
+import ContactBg2 from '@/assets/contact-bg2.svg'
+import ContactBg3 from '@/assets/contact-bg3.svg'
+import ContactBg4 from '@/assets/contact-bg4.svg'
+import ContactMobileBg1 from '@/assets/contact-mobile-bg1.svg'
+import ContactMobileBg2 from '@/assets/contact-mobile-bg2.svg'
 ---
 
-<section class="pt-60 sm:px-20 px-6">
+<section
+  class="sm:px-20 px-6 py-32 sm:py-44 flex flex-col gap-10 sm:gap-12 relative"
+>
+  <ContactBg1 class="absolute right-0 top-20 -z-10 hidden lg:block" />
+  <ContactBg2 class="absolute left-0 -bottom-40 -z-10 hidden lg:block" />
+  <ContactBg3 class="absolute right-0 -bottom-80 -z-10 hidden lg:block" />
+  <ContactBg4 class="absolute left-0 -bottom-100 -z-10 hidden lg:block" />
+  <ContactMobileBg1 class="absolute top-20 inset-x-0 w-full -z-10 lg:hidden" />
+  <ContactMobileBg2 class="absolute bottom-0 inset-x-0 w-full -z-10 lg:hidden" />
+  <div class="flex flex-col gap-6">
+    <h2
+      class="font-extrabold text-5xl lg:text-8xl leading-12 lg:leading-20 uppercase"
+    >
+      Contact us
+    </h2>
+    <h3 class="font-medium text-xl lg:text-3xl lg:leading-11">
+      Let's create something awesome <br class="hidden lg:block" /> together
+    </h3>
+  </div>
   <ContactForm client:load />
 </section>

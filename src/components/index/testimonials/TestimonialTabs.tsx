@@ -58,7 +58,7 @@ export function TestimonialTabs() {
           <div className="flex gap-4 sm:gap-10">
             <div className="font-bold text-secondary text-4xl">&#8220;</div>
             <div className="flex flex-col gap-16">
-              <p className="font-medium text-xl leading-8 sm:text-2xl sm:leading-9 tracking-[-0.01em] ">
+              <p className="font-medium text-xl leading-8 sm:text-2xl sm:leading-9">
                 {testimonial.content}
               </p>
               <div className="flex flex-col gap-3">

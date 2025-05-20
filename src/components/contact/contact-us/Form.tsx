@@ -16,7 +16,7 @@ import {
   TextArea,
   TextField,
 } from 'react-aria-components'
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { Key } from 'react-aria-components'
 import ChevronDownIcon from '@/components/ui/Chevron-Down'
 import ChevronUpIcon from '@/components/ui/Chevron-Up'
@@ -66,9 +66,18 @@ export function ContactForm() {
   })
 
   const [selectedKey, setSelectedKey] = useState<Key>('Malaysia')
+  const [rawPhoneInput, setRawPhoneInput] = useState('')
 
-  const selectedCode =
-    asiaCountryCodes.find((c) => c.name === selectedKey)?.code ?? ''
+  const selectedCode = useMemo(() => {
+    return asiaCountryCodes.find((c) => c.name === selectedKey)?.code ?? ''
+  }, [selectedKey])
+
+  useEffect(() => {
+    if (rawPhoneInput.length !== 0) {
+      form.setFieldValue('phoneNumber', selectedCode + rawPhoneInput)
+      form.validateField('phoneNumber', 'change')
+    }
+  }, [selectedCode, rawPhoneInput])
 
   return (
     <form
@@ -136,17 +145,7 @@ export function ContactForm() {
                 <Select
                   className="w-full max-w-24"
                   selectedKey={selectedKey}
-                  onSelectionChange={(e) => {
-                    setSelectedKey(e)
-                    const currentInputValue = field.state.value.replace(
-                      selectedCode,
-                      '',
-                    )
-                    const newCountryCode =
-                      asiaCountryCodes.find((country) => country.name === e)
-                        ?.code || selectedCode
-                    field.setValue(newCountryCode + currentInputValue)
-                  }}
+                  onSelectionChange={setSelectedKey}
                   aria-label="Country code"
                 >
                   {({ isOpen }) => (
@@ -180,11 +179,9 @@ export function ContactForm() {
                 <Input
                   id={field.name}
                   name={field.name}
-                  value={field.state.value.replace(selectedCode, '')}
+                  value={rawPhoneInput}
                   onBlur={field.handleBlur}
-                  onChange={(e) =>
-                    field.handleChange(selectedCode + e.target.value)
-                  }
+                  onChange={(e) => setRawPhoneInput(e.target.value)}
                   className="w-full font-medium h-13 bg-[#0E1015] rounded-r-xl border-y-1 border-r-1 border-r-primary-foreground/24 border-y-primary-foreground/24 px-4"
                 />
               </div>
@@ -318,7 +315,7 @@ export function ContactForm() {
           name="subscription"
           children={(field) => (
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex gap-2">
                 <Checkbox
                   id={field.name}
                   name={field.name}
@@ -330,9 +327,9 @@ export function ContactForm() {
                   {({ isSelected }) => (
                     <div>
                       {isSelected ? (
-                        <CheckboxCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0" />
+                        <CheckboxCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0 mt-1" />
                       ) : (
-                        <CheckboxUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0" />
+                        <CheckboxUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0 mt-1" />
                       )}
                     </div>
                   )}
@@ -356,7 +353,7 @@ export function ContactForm() {
           name="privacy"
           children={(field) => (
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex gap-2">
                 <Checkbox
                   id={field.name}
                   name={field.name}
@@ -368,9 +365,9 @@ export function ContactForm() {
                   {({ isSelected }) => (
                     <div>
                       {isSelected ? (
-                        <CheckboxCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0" />
+                        <CheckboxCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0 mt-1" />
                       ) : (
-                        <CheckboxUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0" />
+                        <CheckboxUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0 mt-1" />
                       )}
                     </div>
                   )}
@@ -394,12 +391,11 @@ export function ContactForm() {
         />
       </div>
       <form.Subscribe
-        selector={(state) => [state.canSubmit, state.isSubmitting]}
-        children={([canSubmit, isSubmitting]) => (
+        selector={(state) => [state.isSubmitting]}
+        children={([isSubmitting]) => (
           <button
             type="submit"
-            disabled={!canSubmit}
-            className="px-10 py-4 disabled:bg-button-primary/30 disabled:text-foreground/30 bg-button-primary rounded-full w-fit font-extrabold text-lg"
+            className="px-10 py-4 cursor-pointer bg-button-primary rounded-full w-fit font-extrabold text-lg justify-self-center lg:justify-self-start shadow-[0_0_16px_0_#FF336680] hover:bg-button-primary/80"
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>

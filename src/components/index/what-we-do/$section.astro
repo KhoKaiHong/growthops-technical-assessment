@@ -53,7 +53,7 @@ const whatWeDoItems = [
   class="overflow-x-hidden flex flex-col px-5 md:px-20 py-36 gap-10 xl:gap-22"
 >
   <h2
-    class="text-center font-extrabold text-4xl lg:text-8xl leading-10 lg:leading-20 tracking-normal uppercase"
+    class="text-center font-extrabold text-4xl lg:text-8xl leading-10 lg:leading-20 uppercase"
   >
     What we do
   </h2>
@@ -71,20 +71,18 @@ const whatWeDoItems = [
             class="w-full xl:max-w-8/12 rounded-2xl"
           />
           <div class="flex flex-col gap-5 sm:gap-6 xl:max-w-1/4 h-fit">
-            <div class="w-12 h-12 border-2 border-foreground rounded-full flex items-center justify-center font-semibold text-lg sm:text-xl leading-[100%] tracking-normal">
+            <div class="w-12 h-12 border-2 border-foreground rounded-full flex items-center justify-center font-semibold text-lg sm:text-xl">
               {(index + 1).toString().padStart(2, '0')}
             </div>
-            <h3 class="font-extrabold text-2xl sm:text-4xl leading-[100%] tracking-normal">
-              {item.title}
-            </h3>
+            <h3 class="font-extrabold text-2xl sm:text-4xl">{item.title}</h3>
             <div class="flex flex-col gap-4">
               {item.description.map((desc) => (
-                <p class="leading-6 tracking-normal text-foreground-secondary">{desc}</p>
+                <p class="leading-6 text-foreground-secondary">{desc}</p>
               ))}
             </div>
             <a
               href={`${item.href}`}
-              class="px-6 py-3 rounded-full border-1 border-foreground w-fit font-extrabold text-sm leading-[100%] tracking-wide"
+              class="px-6 py-3 rounded-full border-1 border-foreground w-fit font-extrabold text-sm tracking-wide"
             >
               See more
             </a>

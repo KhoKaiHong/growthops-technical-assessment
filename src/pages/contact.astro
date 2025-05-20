@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import ContactLayout from '@/layouts/ContactLayout.astro'
 import { Header } from '@/components/Header.tsx'
 import ContactUs from '@/components/contact/contact-us/$section.astro'
+import OurOffices from '@/components/contact/our-offices/$section.astro'
 ---
 
 <BaseLayout
@@ -13,5 +14,6 @@ import ContactUs from '@/components/contact/contact-us/$section.astro'
   <Header client:load />
   <ContactLayout>
     <ContactUs slot="contact-us" />
+    <OurOffices slot="our-offices" />
   </ContactLayout>
 </BaseLayout>

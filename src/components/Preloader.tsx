@@ -33,7 +33,7 @@ export function Preloader() {
               <br />
               GrowthOps
             </div>
-            <div className="flex items-center rounded-full w-fit h-22 xl:h-40 bg-foreground px-10 xl:px-16 py-5 text-primary font-extrabold xl:text-8xl text-4xl leading-[100%] xl:leading-28 rotate-[-9.47deg]">
+            <div className="flex items-center rounded-full w-fit h-22 xl:h-40 bg-foreground px-10 xl:px-16 py-5 text-primary font-extrabold xl:text-8xl text-4xl xl:leading-28 rotate-[-9.47deg]">
               Asia
             </div>
           </div>
