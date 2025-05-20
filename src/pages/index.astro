@@ -10,6 +10,8 @@ import WhatWeDo from '@/components/index/what-we-do/$section.astro'
 import UnforgettableResults from '@/components/index/unforgettable-results/$section.astro'
 import Testimonials from '@/components/index/testimonials/$section.astro'
 import ClientLogos from '@/components/index/client-logos/$section.astro'
+import Contact from '@/components/index/contact/$section.astro'
+import Footer from '@/components/Footer.astro'
 ---
 
 <BaseLayout
@@ -25,5 +27,7 @@ import ClientLogos from '@/components/index/client-logos/$section.astro'
     <UnforgettableResults slot="unforgettable-results" />
     <Testimonials slot="testimonials" />
     <ClientLogos slot="client-logos" />
+    <Contact slot="contact" />
   </IndexLayout>
+  <Footer />
 </BaseLayout>

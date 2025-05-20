@@ -1,17 +1,13 @@
 ---
 import Heading from '@/components/index/client-logos/Heading.astro'
-import RowOne from '@/components/index/client-logos/RowOne.astro'
-import RowTwo from '@/components/index/client-logos/RowTwo.astro'
-import RowThree from '@/components/index/client-logos/RowThree.astro'
+import Rows from '@/components/index/client-logos/Rows.astro'
 ---
 
 <section
   class="relative overflow-x-hidden flex flex-col gap-16 xl:gap-24 min-h-dvh items-center justify-center"
 >
   <Heading />
-  <div class="flex flex-col items-center gap-16">
-    <RowOne />
-    <RowTwo />
-    <RowThree />
+  <div class="flex flex-col items-center gap-9 sm:gap-16">
+    <Rows />
   </div>
 </section>

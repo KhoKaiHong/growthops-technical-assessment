@@ -1,0 +1,129 @@
+---
+import { Image } from 'astro:assets'
+
+import UobLogo from '@/assets/uob-logo.svg'
+import ToyotaLogo from '@/assets/toyota-logo.svg'
+import PosbLogo from '@/assets/posb-logo.svg'
+import SinglifeLogo from '@/assets/singlife-logo.svg'
+import AmwayLogo from '@/assets/amway-logo.svg'
+import FitnessFirstLogo from '@/assets/fitness-first-logo.svg'
+import SonyLogo from '@/assets/sony-logo.svg'
+import XrvisionLogo from '@/assets/xrvision-logo.svg'
+import CrownLogo from '@/assets/crown-logo.svg'
+import AiaLogo from '@/assets/aia-logo.svg'
+import WwfLogo from '@/assets/wwf-logo.svg'
+
+import MalaysiaAirlinesLogo from '@/assets/malaysia-airlines-logo.svg'
+import MaxisLogo from '@/assets/maxis-logo.svg'
+import GrabLogo from '@/assets/grab-logo.svg'
+import DbsLogo from '@/assets/dbs-logo.svg'
+import TreasureLogo from '@/assets/treasure-logo.svg'
+import MicrosoftLogo from '@/assets/microsoft-logo.svg'
+import LogitechLogo from '@/assets/logitech-logo.svg'
+import DreamscapeDigitalLogo from '@/assets/dreamscape-digital-logo.svg'
+import StandardCharteredLogo from '@/assets/standard-chartered-logo.svg'
+import SitebeatLogo from '@/assets/sitebeat-logo.svg'
+import MizuhoLogo from '@/assets/mizuho-logo.svg'
+
+import CimbLogo from '@/assets/cimb-logo.svg'
+import RhbLogo from '@/assets/rhb-logo.svg'
+import NikkoAmLogo from '@/assets/nikko-am-logo.svg'
+import MannHummelLogo from '@/assets/mann-hummel-logo.svg'
+import ChubbLogo from '@/assets/chubb-logo.svg'
+import NtucLogo from '@/assets/ntuc-logo.svg'
+import TaylorsUniversityLogo from '@/assets/taylors-university-logo.svg'
+import EsplanadeLogo from '@/assets/esplanade-logo.svg'
+import ProtonLogo from '@/assets/proton-logo.svg'
+import TriumphLogo from '@/assets/triumph-logo.svg'
+
+const items = [
+  [
+    { src: UobLogo, alt: 'UOB Logo' },
+    { src: ToyotaLogo, alt: 'Toyota Logo' },
+    { src: PosbLogo, alt: 'POSB Logo' },
+    { src: SinglifeLogo, alt: 'Singlife Logo' },
+    { src: AmwayLogo, alt: 'Amway Logo' },
+    { src: FitnessFirstLogo, alt: 'Fitness First Logo' },
+    { src: SonyLogo, alt: 'Sony Logo' },
+    { src: XrvisionLogo, alt: 'XRVision Logo' },
+    { src: CrownLogo, alt: 'Crown Logo' },
+    { src: AiaLogo, alt: 'AIA Logo' },
+    { src: WwfLogo, alt: 'WWF Logo' },
+  ],
+  [
+    { src: MalaysiaAirlinesLogo, alt: 'Malaysia Airlines Logo' },
+    { src: MaxisLogo, alt: 'Maxis Logo' },
+    { src: GrabLogo, alt: 'Grab Logo' },
+    { src: DbsLogo, alt: 'DBS Logo' },
+    { src: TreasureLogo, alt: 'Treasure Logo' },
+    { src: MicrosoftLogo, alt: 'Microsoft Logo' },
+    { src: LogitechLogo, alt: 'Logitech Logo' },
+    { src: DreamscapeDigitalLogo, alt: 'Dreamscape Digital Logo' },
+    { src: StandardCharteredLogo, alt: 'Standard Chartered Logo' },
+    { src: SitebeatLogo, alt: 'Sitebeat Logo' },
+    { src: MizuhoLogo, alt: 'Mizuho Logo' },
+  ],
+  [
+    { src: CimbLogo, alt: 'CIMB Logo' },
+    { src: RhbLogo, alt: 'RHB Logo' },
+    { src: NikkoAmLogo, alt: 'Nikko AM Logo' },
+    { src: MannHummelLogo, alt: 'Mann Hummel Logo' },
+    { src: ChubbLogo, alt: 'Chubb Logo' },
+    { src: NtucLogo, alt: 'NTUC Logo' },
+    { src: TaylorsUniversityLogo, alt: "Taylor's University Logo" },
+    { src: EsplanadeLogo, alt: 'Esplanade Logo' },
+    { src: ProtonLogo, alt: 'Proton Logo' },
+    { src: TriumphLogo, alt: 'Triumph Logo' },
+    { src: ProtonLogo, alt: 'Proton Logo' },
+  ],
+]
+---
+
+{
+  items.map((row, rowIndex) => (
+    <div class="overflow-clip w-dvw flex mask-x-from-80% mask-x-to-100%">
+      {row.map((logo, index, arr) => (
+        <Image
+          class={`${rowIndex % 2 === 0 ? 'slide-left' : 'slide-right'}`}
+          style={`--index: ${index}; --count: ${arr.length};`}
+          src={logo.src}
+          alt={logo.alt}
+        />
+      ))}
+    </div>
+  ))
+}
+
+<style>
+  .slide-left {
+    --duration: 17s;
+    --delay: calc(
+      (var(--duration) / var(--count)) *
+        (var(--index, 0) - (var(--count) * 0.5))
+    );
+    animation: slide var(--duration) calc(var(--delay) - (var(--count) * 0.5s))
+      infinite linear;
+    translate: var(--origin-x) 0;
+    --origin-x: calc(((var(--count) - var(--index)) + 1) * 100%);
+    --destination-x: calc((var(--index) + 1) * -100%);
+  }
+
+  .slide-right {
+    --duration: 17s;
+    --delay: calc(
+      (var(--duration) / var(--count)) *
+        (var(--index, 0) - (var(--count) * 0.5))
+    );
+    animation: slide var(--duration) calc(var(--delay) - (var(--count) * 0.5s))
+      infinite linear reverse;
+    translate: var(--origin-x) 0;
+    --origin-x: calc(((var(--count) - var(--index)) + 1) * 100%);
+    --destination-x: calc((var(--index) + 1) * -100%);
+  }
+
+  @keyframes slide {
+    100% {
+      translate: var(--destination-x) 0;
+    }
+  }
+</style>

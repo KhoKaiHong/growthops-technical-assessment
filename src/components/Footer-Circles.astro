@@ -1,0 +1,73 @@
+---
+const {
+  outerStrokeColor = 'rgba(255,255,255,1)',
+  outerStrokeColorMobile = 'rgba(255,255,255,1)',
+} = Astro.props
+---
+
+<div class="absolute hidden sm:block -z-10 top-0 left-1/2 transform -translate-x-1/2">
+  <svg
+    width="4155"
+    height="4155"
+    viewBox="0 0 4155 4281"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="2077.5"
+      cy="2077.5"
+      r="2077.5"
+      fill="none"
+      stroke={outerStrokeColor}
+      stroke-width="1"
+      stroke-opacity="0.3"></circle>
+    <circle
+      cx="2077.5"
+      cy="2149.5"
+      r="2077.5"
+      fill="none"
+      stroke="rgba(255,255,255,1)"
+      stroke-width="1"
+      stroke-opacity="0.5"></circle>
+    <circle
+      cx="2077.5"
+      cy="2203.5"
+      r="2077.5"
+      fill="none"
+      stroke="rgba(255,255,255,1)"
+      stroke-width="1"
+      stroke-opacity="0.7"></circle>
+  </svg>
+</div>
+<div class="absolute sm:hidden -z-10 top-0 left-1/2 transform -translate-x-1/2">
+  <svg
+    width="756"
+    height="856"
+    viewBox="0 0 756 856"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="378"
+      cy="378"
+      r="378"
+      fill="none"
+      stroke={outerStrokeColorMobile}
+      stroke-width="1"
+      stroke-opacity="0.3"></circle>
+    <circle
+      cx="378"
+      cy="428"
+      r="378"
+      fill="none"
+      stroke="rgba(255,255,255,1)"
+      stroke-width="1"
+      stroke-opacity="0.5"></circle>
+    <circle
+      cx="378"
+      cy="478"
+      r="378"
+      fill="none"
+      stroke="rgba(255,255,255,1)"
+      stroke-width="1"
+      stroke-opacity="0.7"></circle>
+  </svg>
+</div>

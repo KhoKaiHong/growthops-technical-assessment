@@ -3,18 +3,15 @@ import '@/styles/global.css'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import ContactLayout from '@/layouts/ContactLayout.astro'
 import { Header } from '@/components/Header.tsx'
-import { Preloader } from '@/components/Preloader.tsx'
+import ContactUs from '@/components/contact/contact-us/$section.astro'
 ---
 
 <BaseLayout
   title="GrowthOps Asia"
   description="This is the landing page of GrowthOps Asia"
 >
-  <!-- <Preloader client:load /> -->
   <Header client:load />
   <ContactLayout>
-    <div class="h-[2000px] text-8xl flex items-center justify-center">
-      <a href="/">Hello</a>
-    </div>
+    <ContactUs slot="contact-us" />
   </ContactLayout>
 </BaseLayout>

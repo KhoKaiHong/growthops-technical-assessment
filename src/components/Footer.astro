@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets'
+import LinkedinLogo from '@/assets/linkedin-logo.svg'
+import FacebookLogo from '@/assets/facebook-logo.svg'
+import InstagramLogo from '@/assets/instagram-logo.svg'
+import YoutubeLogo from '@/assets/youtube-logo.svg'
+import RedirectLogo from '@/assets/redirect-logo.svg'
+import FooterCircles from '@/components/Footer-Circles.astro'
+
+const menuItems = [
+  { name: 'Services', href: '#' },
+  { name: 'Work', href: '#' },
+  { name: 'Insights', href: '#' },
+  { name: 'Careers', href: '#' },
+  { name: 'Contact Us', href: '#' },
+]
+
+const socials = [
+  { name: 'LinkedIn', href: '#', src: LinkedinLogo },
+  { name: 'Facebook', href: '#', src: FacebookLogo },
+  { name: 'Instagram', href: '#', src: InstagramLogo },
+  { name: 'Youtube', href: '#', src: YoutubeLogo },
+]
+---
+
+<div class="overflow-clip relative pt-36 sm:pt-60">
+  <FooterCircles outerStrokeColorMobile="rgba(255, 51, 102, 1)" />
+  <footer class="flex flex-col justify-center items-center gap-14 w-full py-20">
+    <div
+      class="flex items-center justify-center gap-x-10 gap-y-8 px-10 w-full flex-wrap"
+    >
+      {
+        menuItems.map((item) => (
+          <a href={item.href} class="font-medium">
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex w-full max-w-sm justify-between px-10">
+      {
+        socials.map((social) => (
+          <a href={social.href}>
+            <Image src={social.src} alt={social.name} />
+          </a>
+        ))
+      }
+    </div>
+    <div
+      class="flex w-full px-10 lg:px-20 items-center justify-center lg:justify-between"
+    >
+      <div
+        class="font-semibold text-xs capitalize text-[#6F7176] hidden lg:block"
+      >
+        © Copyright GrowthOps. All rights reserved.
+      </div>
+      <div
+        class="flex font-medium text-xs tracking-wide text-center gap-x-12 gap-y-6 flex-wrap justify-center"
+      >
+        <a href="#" target="_blank">
+          <div class="flex gap-2">
+            <RedirectLogo class="h-4 w-4 fill-primary-foreground" />
+            Go to global GrowthOps website
+          </div>
+        </a>
+        <a href="#" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</div>
