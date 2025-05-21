@@ -61,6 +61,7 @@ export function ContactForm() {
       onChange: FormSchema,
     },
     onSubmit: async ({ value }) => {
+      // You would call a backend API to submit the form data
       console.log(value)
     },
   })
