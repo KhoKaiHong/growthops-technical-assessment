@@ -18,15 +18,15 @@ Used for its strengths in:
 
 ## To run the project
 
-1. Run `npm run dev` or `pnpm dev` if you are using pnpm
+1. Run `npm run dev` if you are using npm, or `pnpm dev` if you are using pnpm
 2. Open `http://localhost:4321/` in your browser
 
 ## To build the project
 
-1. Run `npm run build` or `pnpm build` if you are using pnpm
+1. Run `npm run build` if you are using npm, or `pnpm build` if you are using pnpm
 
 ## To deploy the project
 
-Read more about [deploying an Astro site here](https://docs.astro.build/en/guides/deploy/)
-Read more about [setting environment variables here](https://docs.astro.build/en/guides/environment-variables/)
-Read more about [configuring Astro to turn from SSG to SSR here](https://docs.astro.build/en/guides/on-demand-rendering/)
+- Read more about [deploying an Astro site here](https://docs.astro.build/en/guides/deploy/)
+- Read more about [setting environment variables here](https://docs.astro.build/en/guides/environment-variables/)
+- Read more about [configuring Astro to turn from SSG to SSR here](https://docs.astro.build/en/guides/on-demand-rendering/)
