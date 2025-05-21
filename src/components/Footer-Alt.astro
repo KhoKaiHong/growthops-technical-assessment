@@ -15,6 +15,22 @@ const menuItems = [
   { name: 'Contact Us', href: '#' },
 ]
 
+const officeItems = [
+  {
+    area: 'Asia',
+    offices: [
+      { location: 'Hong Kong', href: '#' },
+      { location: 'Kuala Lumpur', href: '#' },
+      { location: 'Manila', href: '#' },
+      { location: 'Singapore', href: '#' },
+    ],
+  },
+  {
+    area: 'Middle East',
+    offices: [{ location: 'United Arab Emirates', href: '#' }],
+  },
+]
+
 const socials = [
   { name: 'LinkedIn', href: '#', src: LinkedinLogo },
   { name: 'Facebook', href: '#', src: FacebookLogo },
@@ -24,16 +40,36 @@ const socials = [
 ---
 
 <div class="overflow-clip relative pt-36 sm:pt-60">
-  <FooterCircles outerStrokeColorMobile="rgba(255, 51, 102, 1)" />
-  <footer class="flex flex-col justify-center items-center gap-14 w-full py-20">
+  <FooterCircles outerStrokeColor="rgba(255, 51, 102, 1)" outerStrokeColorMobile="rgba(255, 51, 102, 1)" />
+  <footer
+    class="flex flex-col justify-center items-center gap-8 lg:gap-14 w-full pt-12 lg:pt-20 pb-8 lg:pb-20"
+  >
     <div
-      class="flex items-center justify-center gap-x-10 gap-y-8 px-10 w-full flex-wrap"
+      class="hidden lg:flex items-center justify-center gap-x-10 gap-y-8 px-10 w-full flex-wrap"
     >
       {
         menuItems.map((item) => (
           <a href={item.href} class="font-medium">
             {item.name}
           </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-col w-full px-6 lg:hidden gap-5">
+      {
+        officeItems.map((item) => (
+          <div class="flex flex-col gap-5">
+            <p class="font-semibold text-sm text-[#666666] uppercase">
+              {item.area}
+            </p>
+            <div class="flex flex-col gap-4">
+              {item.offices.map((office) => (
+                <a href={office.href} target="_blank" >
+                  {office.location}
+                </a>
+              ))}
+            </div>
+          </div>
         ))
       }
     </div>
@@ -46,12 +82,8 @@ const socials = [
         ))
       }
     </div>
-    <div
-      class="flex w-full px-10 lg:px-20 items-center justify-center lg:justify-between"
-    >
-      <div
-        class="font-semibold text-xs capitalize text-[#6F7176] hidden lg:block"
-      >
+    <div class="hidden lg:flex w-full px-20 items-center justify-between">
+      <div class="font-semibold text-xs capitalize text-[#6F7176]">
         © Copyright GrowthOps. All rights reserved.
       </div>
       <div

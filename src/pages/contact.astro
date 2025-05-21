@@ -5,6 +5,7 @@ import ContactLayout from '@/layouts/ContactLayout.astro'
 import { Header } from '@/components/Header.tsx'
 import ContactUs from '@/components/contact/contact-us/$section.astro'
 import OurOffices from '@/components/contact/our-offices/$section.astro'
+import FooterAlt from '@/components/Footer-Alt.astro'
 ---
 
 <BaseLayout
@@ -16,4 +17,5 @@ import OurOffices from '@/components/contact/our-offices/$section.astro'
     <ContactUs slot="contact-us" />
     <OurOffices slot="our-offices" />
   </ContactLayout>
+  <FooterAlt />
 </BaseLayout>

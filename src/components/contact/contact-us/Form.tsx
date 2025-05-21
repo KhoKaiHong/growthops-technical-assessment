@@ -111,7 +111,7 @@ export function ContactForm() {
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  className="font-medium h-13 bg-[#0E1015] rounded-xl border-1 border-primary-foreground/24 px-4"
+                  className="font-medium h-13 bg-[#0E1015] rounded-xl border-1 border-foreground/24 px-4"
                 />
 
                 {field.state.meta.isTouched && !field.state.meta.isValid ? (
@@ -150,17 +150,17 @@ export function ContactForm() {
                 >
                   {({ isOpen }) => (
                     <>
-                      <Button className="flex gap-2 h-13 bg-[#1B1D24] rounded-l-xl items-center justify-center w-full border-y-1 border-l-1 border-l-primary-foreground/24 border-y-primary-foreground/24">
+                      <Button className="flex gap-2 h-13 bg-[#1B1D24] rounded-l-xl items-center justify-center w-full border-y-1 border-l-1 border-l-foreground/24 border-y-foreground/24">
                         <div className="font-medium">{selectedCode}</div>
                         {isOpen ? (
-                          <ChevronUpIcon className="h-4 w-4 fill-primary-foreground" />
+                          <ChevronUpIcon className="h-4 w-4 fill-foreground" />
                         ) : (
-                          <ChevronDownIcon className="h-4 w-4 fill-primary-foreground" />
+                          <ChevronDownIcon className="h-4 w-4 fill-foreground" />
                         )}
                       </Button>
 
                       <Popover>
-                        <ListBox className="z-50 max-h-60 overflow-y-scroll bg-[#1B1D24] rounded-xl px-1 py-1 border-1 border-primary-foreground/24">
+                        <ListBox className="z-50 max-h-60 overflow-y-scroll bg-[#1B1D24] rounded-xl px-1 py-1 border-1 border-foreground/24">
                           {asiaCountryCodes.map((country) => (
                             <ListBoxItem
                               key={country.name}
@@ -182,7 +182,7 @@ export function ContactForm() {
                   value={rawPhoneInput}
                   onBlur={field.handleBlur}
                   onChange={(e) => setRawPhoneInput(e.target.value)}
-                  className="w-full font-medium h-13 bg-[#0E1015] rounded-r-xl border-y-1 border-r-1 border-r-primary-foreground/24 border-y-primary-foreground/24 px-4"
+                  className="w-full font-medium h-13 bg-[#0E1015] rounded-r-xl border-y-1 border-r-1 border-r-foreground/24 border-y-foreground/24 px-4"
                 />
               </div>
 
@@ -218,7 +218,7 @@ export function ContactForm() {
                 value={field.state.value}
                 onBlur={field.handleBlur}
                 onChange={(e) => field.handleChange(e.target.value)}
-                className="h-13 font-medium bg-[#0E1015] rounded-xl border-1 border-primary-foreground/24 px-4"
+                className="h-13 font-medium bg-[#0E1015] rounded-xl border-1 border-foreground/24 px-4"
               />
 
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
@@ -255,7 +255,7 @@ export function ContactForm() {
                       {({ isSelected }) => (
                         <div className="flex items-center gap-2 font-medium">
                           {isSelected ? (
-                            <RadioCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0" />
+                            <RadioCheckedIcon className="h-4 w-4 fill-foreground shrink-0" />
                           ) : (
                             <RadioUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0" />
                           )}
@@ -298,7 +298,7 @@ export function ContactForm() {
                 onBlur={field.handleBlur}
                 onChange={(e) => field.handleChange(e.target.value)}
                 placeholder="Briefly describe your message here"
-                className="h-60 font-medium bg-[#0E1015] rounded-xl border-1 border-primary-foreground/24 px-6 py-6 overflow-y-scroll resize-none"
+                className="h-60 font-medium bg-[#0E1015] rounded-xl border-1 border-foreground/24 px-6 py-6 overflow-y-scroll resize-none"
               />
 
               {field.state.meta.isTouched && !field.state.meta.isValid ? (
@@ -327,7 +327,7 @@ export function ContactForm() {
                   {({ isSelected }) => (
                     <div>
                       {isSelected ? (
-                        <CheckboxCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0 mt-1" />
+                        <CheckboxCheckedIcon className="h-4 w-4 fill-foreground shrink-0 mt-1" />
                       ) : (
                         <CheckboxUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0 mt-1" />
                       )}
@@ -365,7 +365,7 @@ export function ContactForm() {
                   {({ isSelected }) => (
                     <div>
                       {isSelected ? (
-                        <CheckboxCheckedIcon className="h-4 w-4 fill-primary-foreground shrink-0 mt-1" />
+                        <CheckboxCheckedIcon className="h-4 w-4 fill-foreground shrink-0 mt-1" />
                       ) : (
                         <CheckboxUncheckedIcon className="h-4 w-4 fill-[#666666] shrink-0 mt-1" />
                       )}

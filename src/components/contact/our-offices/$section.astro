@@ -1,4 +1,8 @@
 ---
+import PhoneIcon from '@/assets/phone-icon.svg'
+import AtIcon from '@/assets/at-icon.svg'
+import LocationIcon from '@/assets/location-icon.svg'
+
 const offices = [
   {
     area: 'Asia',
@@ -38,12 +42,54 @@ const offices = [
 ]
 ---
 
-<section class="sm:px-20 px-6 flex flex-col gap-10 sm:gap-12 relative">
-  <div class="flex flex-col gap-6 items-center justify-center">
+<section class="px-6 sm:px-20 pb-12 flex flex-col gap-11 lg:gap-30">
+  <div class="flex flex-col gap-18 items-center justify-center">
     <h2
       class="font-extrabold text-5xl lg:text-8xl leading-12 lg:leading-20 uppercase"
     >
       Our offices
     </h2>
+    <div
+      class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 w-full gap-x-10 gap-y-16"
+    >
+      {
+        offices.map((office) => (
+          <div class="flex flex-col w-full h-full px-8 py-6 rounded-3xl border-2 border-foreground/8 gap-6 relative">
+            <div class=" -z-10 absolute inset-0 bg-black opacity-40 bg-blend-overlay rounded-3xl backdrop-blur-2xl shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.25)]" />
+            <div class="flex flex-col gap-2">
+              <p class="font-semibold text-xs uppercase">{office.area}</p>
+              <p class="font-extrabold text-2xl text-secondary">
+                {office.location}
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 font-medium">
+              {office.phoneNumber ? (
+                <div class="flex gap-3">
+                  <PhoneIcon class="h-4 w-4 fill-secondary sm:fill-[#B4B4B4] shrink-0 mt-1" />
+                  <p>{office.phoneNumber}</p>
+                </div>
+              ) : null}
+              {office.email ? (
+                <div class="flex gap-3">
+                  <AtIcon class="h-4 w-4 fill-secondary sm:fill-[#B4B4B4] shrink-0 mt-1" />
+                  <p>{office.email}</p>
+                </div>
+              ) : null}
+              {office.address ? (
+                <div class="flex gap-3">
+                  <LocationIcon class="h-4 w-4 fill-secondary sm:fill-[#B4B4B4] shrink-0 mt-1" />
+                  <p class="text-wrap">{office.address}</p>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
+  <h3
+    class="font-extrabold text-4xl lg:text-8xl leading-10 lg:leading-20 lg:text-center uppercase"
+  >
+    Keep <br class="lg:hidden"/>in touch
+  </h3>
 </section>
